@@ -10,7 +10,7 @@ import { interval, Subscription } from 'rxjs';
   styleUrl: './chronometer.component.scss',
 })
 export class ChronometerComponent {
-  private counterObservable = interval(1);
+  private counterObservable = interval(1000);
   private counterSubscription$: Subscription | undefined;
 
   count = signal<number>(0);
@@ -18,10 +18,10 @@ export class ChronometerComponent {
 
   start() {
     if (!this.running()) {
+      this.running.set(true);
       this.counterSubscription$ = this.counterObservable.subscribe({
         next: () => {
-          this.running.set(true);
-          this.count.update((count) => count + 1);
+          this.count.update((count) => count + 1000);
         },
       });
     }
@@ -33,6 +33,6 @@ export class ChronometerComponent {
   }
 
   reset() {
-    this.count = signal<number>(0);
+    this.count.set(0);
   }
 }
