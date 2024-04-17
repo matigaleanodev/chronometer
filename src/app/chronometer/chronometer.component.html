@@ -1,0 +1,40 @@
+<main class="container">
+  <div class="row justify-content-center mt-2">
+    <div class="col-12 col-md-10 col-lg-6 col-xl-4">
+      <div class="card shadow-lg">
+        <div class="card-header">
+          <h1 class="text-center">Chronometer</h1>
+        </div>
+        <div class="card-body">
+          <div style="height: 150px" class="d-flex">
+            <p class="m-auto fs-1">
+              {{ count() | date : "HH:mm:ss.SSS" : "UTC" }}
+            </p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="row justify-content-center">
+            @if (running()) {
+            <div class="col-auto">
+              <button class="btn btn-outline-danger" (click)="stop()">
+                <i class="fa-solid fa-stop"></i>
+              </button>
+            </div>
+            } @else {
+            <div class="col-auto">
+              <button class="btn btn-outline-success" (click)="start()">
+                <i class="fa-solid fa-play"></i>
+              </button>
+            </div>
+            }
+            <div class="col-auto">
+              <button class="btn btn-outline-secondary" (click)="reset()">
+                <i class="fa-solid fa-repeat"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
