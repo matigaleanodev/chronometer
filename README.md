@@ -1,27 +1,23 @@
 # Chronometer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
+[Español](README.es.md)
 
-## Development server
+Learning example: Start, pause and reset an in-memory counter with Angular signals.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Stack: Angular 20 · RxJS.
 
-## Code scaffolding
+## Centralized example
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The source is preserved in this repository. The runnable collection copy, with its own dependency lockfile, build configuration and instructions, lives in [Angular Examples](https://github.com/matigaleanodev/angular-examples/tree/main/examples/chronometer).
 
-## Build
+For local use, follow the collection README and its `.nvmrc` (install the indicated Node version if needed):
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```sh
+git clone https://github.com/matigaleanodev/angular-examples.git
+cd angular-examples/examples/chronometer
+nvm use
+npm ci --ignore-scripts
+npm start
+```
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The commands above run the centralized copy. This original repository remains a learning reference; it is not a production application template.
